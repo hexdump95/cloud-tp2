@@ -1,0 +1,15 @@
+Resources:
+  Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: Conversion
+      Handler: com.hexdump95.App::handleRequest
+      Runtime: java11
+      MemorySize: 512
+      Events:
+        Conversion:
+          Type: Api
+          Properties:
+            Path: /conversion/{decimal}
+            Method: post
+
